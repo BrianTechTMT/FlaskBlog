@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for HT in HTs %}
+        <h1>{{HT.Name}}</h1>
+        <p>age : {{HT.Age}}</p>
+        <p>role: {{HT.Role}}</p>
+    {% endfor %}
+{% endblock %}

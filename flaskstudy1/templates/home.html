@@ -1,0 +1,18 @@
+
+ {% extends "layout.html" %}
+ {% block title %} Sign Up {% endblock %}
+ {% block content %}
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+                <img class= "rounded-circle article-img" src="{{url_for('static', filename = 'profileImg/' + post.HTs.avatar)}}" alt="">
+              <a class="mr-2" href="#">{{ post.HTs.username }}</a>
+              <small class="text-muted">{{ post.postDate.strftime('%Y-%m-%d') }}</small>
+            </div>
+            <h2><a class="article-title" href="{{url_for('post', post_id = post.id,post_date = post.postDate.strftime('%Y-%m-%d'), post_title= post.title)}}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+ {% endblock %}
